@@ -1,0 +1,265 @@
+{
+  "legal_name": "Tamimi Global Company Ltd.",
+  "short_name": "TAFGA",
+  "group_affiliation": "Tamimi Group of Companies",
+  "ownership": "100% Saudi Arabian owned",
+  "founded": 1977,
+  "headquarters": {
+    "address": "Dammam, Eastern Province, Saudi Arabia",
+    "phone": "+966 13 807 5700"
+  },
+  "tagline": "Driving sustainable growth for businesses through strategic partnerships and the provision of premium, integrated service solutions.",
+  "mission": "Achieve growth and expansion by providing integrated solutions with high quality and professionalism.",
+  "guiding_principles": [
+    "Elevating experiences",
+    "Quality without compromise",
+    "Client-centric partnership",
+    "Operational excellence",
+    "Empowering our people",
+    "Sustainability in practice",
+    "Safety and well-being first",
+    "Respecting local culture",
+    "Driving value and innovation"
+  ],
+  "workforce": {
+    "employees": 17000,
+    "nationalities": 29,
+    "work_sites": 200,
+    "countries_operated": [
+      "Saudi Arabia",
+      "Qatar",
+      "Kuwait"
+    ]
+  },
+  "notes": [
+    "Part of the Tamimi Group, founded by Sheikh Ali bin Abdullah Al‑Tamimi.",
+    "Employs a diverse workforce across more than 200 sites in Saudi Arabia, Qatar and Kuwait.",
+    "Provides services across multiple sectors including operations & maintenance, construction of temporary facilities, facility management, industrial services, catering and manpower supply."
+  ],
+  "last_updated": "2025-09-02T00:00:00Z",
+  "catering_and_food_services": {
+    "industrial_catering": "Large-scale catering for industrial sectors, ensuring nutritious and hygienic meals for workforce operations.",
+    "hospital_catering": "Specialized catering for healthcare facilities with focus on dietary requirements and safety.",
+    "airline_catering": "High-quality in‑flight catering with freshness, variety and punctual delivery.",
+    "fine_dining": "Gourmet dishes and exceptional service for executive and VIP dining.",
+    "special_events_catering": "Customized menus and seamless execution for weddings, corporate events and other special occasions.",
+    "food_trucks_carts": "Mobile food services delivered through trucks and carts."
+  },
+  "operations_and_maintenance": {
+    "housekeeping_services": "Professional housekeeping and janitorial services to ensure clean and organized environments.",
+    "helpdesk_services": "Round‑the‑clock support for technical issues and service requests.",
+    "housing_services": "Secure and well‑managed residential accommodations for workforce and community living.",
+    "pest_control_services": "Proactive pest management to maintain hygienic environments.",
+    "sanitation_services": "Waste management, cleaning protocols and environmental sanitation.",
+    "janitorial_services": "Comprehensive cleaning and maintenance services for facilities.",
+    "road_and_parking_maintenance": "Maintenance of roads and parking areas to ensure safe and efficient access.",
+    "building_maintenance": "On‑site maintenance to keep buildings in optimal condition and minimize downtime.",
+    "utility_services": "Management of power, water, HVAC and other utilities to ensure continuous supply.",
+    "it_support_services": "IT infrastructure and on‑site technical support services."
+  },
+  "facility_management_and_accommodation": {
+    "hawiyah_residential_park": "Accommodation solutions designed for comfort and operational efficiency; dedicated to Aramco contractors.",
+    "geshla_residency": "Premier housing solutions with inclusive board & lodging services designed for long‑term worker satisfaction; open to all organizations.",
+    "neom_residency": "Premium board & lodging facilities within the NEOM region for project‑based accommodations; dedicated to NEOM contractors and affiliates."
+  },
+  "specialized_services": {
+    "fire_protection_services": "On‑site fire stations and emergency response capabilities.",
+    "medical_services": "On‑site medical clinics providing continuous healthcare and emergency response.",
+    "security_services": "Comprehensive security services to protect personnel, assets and facilities.",
+    "recreation_services": "Recreational activities and facilities promoting physical wellness and mental well‑being.",
+    "commissaries_and_barber_shop_services": "Provisioned commissaries and barber shop services.",
+    "laundry_services": "Efficient and hygienic laundry services for accommodation residents."
+  },
+  "construction_and_engineering": {
+    "fabrication_and_installation_of_portable_buildings": "Fabrication and installation of portable buildings and modular facilities.",
+    "construction_of_temporary_facilities": "Design and construction of temporary facilities to support projects and workforce.",
+    "manpower_supply_services": "Supply of skilled manpower to meet project needs.",
+    "programme_and_project_management": "Preconstruction consulting, programme management, project management and construction management services.",
+    "design_and_build": "Turn‑key design and build services including building maintenance and multiple building programmes."
+  },
+  "projects": [
+    {
+      "name": "AMAALA Construction Village",
+      "description": "Design and build contract for a workforce accommodation complex supporting the AMAALA luxury destination. The contract covers civil and infrastructure works for three stages, each accommodating 5,184 residents, with total capacity of 15,552. Facilities will include community amenities and utilize off‑site fabrication and modular construction to reduce environmental impact and delivery time.",
+      "partners": [
+        "Public Investment Fund (PIF)",
+        "Red Sea Global"
+      ],
+      "awarded_by": "PIF (AMAALA)",
+      "year_awarded": 2021,
+      "highlights": [
+        "KSA-based TAFGA firm selected for its understanding of the local landscape and ability to create short‑ and long‑term residential communities.",
+        "Sustainable design employing off‑site fabrication and modular construction techniques to minimize environmental impact and reduce delivery time.",
+        "Each stage addresses the needs of 5,184 future residents; upon completion the village will accommodate 15,552 residents and include community facilities for staff."
+      ],
+      "sources": [
+        "worldconstructiontoday.com article detailing AMAALA contract award and project scope"
+      ]
+    },
+    {
+      "name": "Planon Facility Services Business Solution Implementation",
+      "description": "Planon signed a contract with Tamimi Global on 25 November 2024 to implement its Facility Services Business Solution (FSBS), part of the Planon Field Services Platform. The implementation will support TAFGA’s field services operations—including hard and soft facility management and space/real estate services—streamline processes, optimize resource allocation, enhance customer satisfaction and reduce costs.",
+      "partners": [
+        "Planon",
+        "Virtual IT"
+      ],
+      "year_awarded": 2024,
+      "highlights": [
+        "TAFGA employs over 17,000 employees and offers services across operations & maintenance, temporary facility construction, facility management, catering, industrial services and executive management.",
+        "Planon FSBS will provide a Total Experience solution, helping Tamimi deliver improved customer and employee satisfaction.",
+        "Virtual IT, Planon’s certified partner in the Middle East, will assist with deployment."
+      ],
+      "sources": [
+        "Planon press release on Planon contracts with Tamimi Global"
+      ]
+    },
+    {
+      "name": "NEOM Construction Village (contract with SATCO)",
+      "description": "Tamimi Group and Saudi Arabian Trading & Construction Co. (SATCO) were awarded a contract to build and operate a construction village for the NEOM megacity project, providing accommodation for 30,000 workers. The project supports NEOM’s 500 billion USD mega‑city development.",
+      "partners": [
+        "SATCO",
+        "NEOM project"
+      ],
+      "year_awarded": 2020,
+      "highlights": [
+        "Designed to accommodate 30,000 workers supporting the NEOM development.",
+        "Part of NEOM’s futuristic giga‑project under Saudi Vision 2030."
+      ],
+      "sources": [
+        "Construction Week Saudi article on Tamimi Global as a top KSA construction firm"
+      ]
+    },
+    {
+      "name": "Aramco Camp Operations – Jazan City",
+      "description": "Under an agreement with Saudi Aramco, Tamimi Global operates and maintains the Aramco camp in Jazan City for Primary and Downstream Industries. The camp’s power supply is provided by twelve CAT 3516 units delivering 10 MW; Tamimi is responsible for their operation and maintenance.",
+      "partners": [
+        "Saudi Aramco",
+        "Zahid Tractor"
+      ],
+      "year_awarded": 2019,
+      "highlights": [
+        "Zahid Tractor overhauled several CAT 3516 units used to supply power to the camp.",
+        "Tamimi operates and maintains the camp’s power generation units."
+      ],
+      "sources": [
+        "Zahid Group article on Aramco camp operations agreement"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "standard": "ISO 9001",
+      "version": "2015",
+      "description": "Quality management systems"
+    },
+    {
+      "standard": "ISO 14001",
+      "version": "2015",
+      "description": "Environmental management systems"
+    },
+    {
+      "standard": "ISO 45001",
+      "version": "2018",
+      "description": "Occupational health and safety management systems"
+    },
+    {
+      "standard": "ISO 22000",
+      "version": "2018",
+      "description": "Food safety management systems"
+    },
+    {
+      "standard": "ISO 41001",
+      "version": "2018",
+      "description": "Facility management systems",
+      "note": "Hawiyah Residential Park achieved ISO 41001 certification in 2021"
+    },
+    {
+      "standard": "ISO 9001",
+      "version": "2008",
+      "description": "Quality management – older certification"
+    },
+    {
+      "standard": "OHSAS 18001",
+      "version": "2007",
+      "description": "Occupational health and safety management systems – precursor to ISO 45001"
+    },
+    {
+      "standard": "HACCP",
+      "version": null,
+      "description": "Hazard Analysis Critical Control Point – food safety management"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Saudi Aramco",
+      "sector": "Oil & gas",
+      "relationship": "Long‑term client for operations & maintenance, camp operations and workforce accommodation"
+    },
+    {
+      "name": "Public Investment Fund (PIF) – AMAALA",
+      "sector": "Tourism/Real estate",
+      "relationship": "Design‑build contractor for the AMAALA Construction Village"
+    },
+    {
+      "name": "NEOM",
+      "sector": "Giga‑projects",
+      "relationship": "Joint venture with SATCO to build and operate NEOM Construction Village"
+    },
+    {
+      "name": "Saudi Electricity Company",
+      "sector": "Utilities",
+      "relationship": "Facilities management and operations services"
+    },
+    {
+      "name": "SABIC",
+      "sector": "Chemicals",
+      "relationship": "Industrial services and facilities management"
+    },
+    {
+      "name": "KAUST – King Abdullah University of Science and Technology",
+      "sector": "Education",
+      "relationship": "Facilities management and services"
+    },
+    {
+      "name": "Petro Rabigh",
+      "sector": "Petrochemicals",
+      "relationship": "Operations & maintenance services"
+    },
+    {
+      "name": "Ministry of Health (KSA)",
+      "sector": "Healthcare",
+      "relationship": "Catering, facilities management and operations services for hospitals"
+    },
+    {
+      "name": "National Guard Hospitals (KSA)",
+      "sector": "Healthcare",
+      "relationship": "Catering and facilities management services"
+    }
+  ],
+  "area_office_hofuf_al_ahsa": {
+    "address": "P.O. Box 939, Al‑Ahsa 31982, Saudi Arabia",
+    "phone": "+966 13 510 9777",
+    "fax": "+966 13 510 9766",
+    "email": "hcphelpdesk@al‑tamimi.com"
+  },
+  "tamimi_ats_office": {
+    "address": "Building No. 4103 King Fahd Ibn Abdul Aziz Road Industrial Area No 1 Unit No 1, Dammam 32234‑8448, Saudi Arabia",
+    "phone": "+966‑13‑341‑1391",
+    "email": "info@tamimiats.com",
+    "note": "Contact for Tamimi ATS (construction division)"
+  },
+  "websites": [
+    "https://tafga-sa.com"
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/tafgajeddah/"
+  },
+  "entries": [
+    {
+      "date": "2011-09-16",
+      "description": "Tamimi Global paid USD 13 million to resolve U.S. criminal and civil allegations related to kickbacks and illegal gratuities involving subcontracts under the U.S. Army’s LOGCAP III programme. The settlement, which included a deferred prosecution agreement and civil payment, resolved allegations that TAFGA paid bribes to obtain subcontracts to provide services to U.S. military forces in the Middle East.",
+      "jurisdiction": "United States (Department of Justice)"
+    }
+  ],
+  "last_combined": "2025-09-02T17:04:21.879245Z"
+}
