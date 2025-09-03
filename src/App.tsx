@@ -1,29 +1,17 @@
-import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import BusinessDivisions from './components/BusinessDivisions';
-import TamimiMarkets from './components/TamimiMarkets';
-import Partnerships from './components/Partnerships';
-import CSR from './components/CSR';
-import Careers from './components/Careers';
-import News from './components/News';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import CareersPage from './pages/CareersPage';
 
 function App() {
   return (
     <div className="min-h-screen">
       <Header />
-      <Hero />
-      <About />
-      <BusinessDivisions />
-      <TamimiMarkets />
-      <Partnerships />
-      <CSR />
-      <Careers />
-      <News />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/careers" element={<CareersPage />} />
+      </Routes>
       <Footer />
     </div>
   );

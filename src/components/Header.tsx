@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Business Divisions', href: '#divisions' },
-    { name: 'Tamimi Markets', href: '#markets' },
-    { name: 'CSR', href: '#csr' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'News & Investors', href: '#news' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', type: 'route' },
+    { name: 'About', href: '#about', type: 'anchor' },
+    { name: 'Business Divisions', href: '#divisions', type: 'anchor' },
+    { name: 'Tamimi Markets', href: '#markets', type: 'anchor' },
+    { name: 'CSR', href: '#csr', type: 'anchor' },
+    { name: 'Careers', href: '/careers', type: 'route' },
+    { name: 'News & Investors', href: '#news', type: 'anchor' },
+    { name: 'Contact', href: '#contact', type: 'anchor' },
   ];
 
   return (
@@ -21,9 +22,9 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/TamimiGroup.png" 
-              alt="Tamimi Group" 
+            <img
+              src="/TamimiGroup.png"
+              alt="Tamimi Group"
               className="h-12 w-auto"
             />
           </div>
@@ -31,13 +32,23 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-[#857757] transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </a>
+              item.type === 'route' ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-gray-700 hover:text-[#857757] transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-[#857757] transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
+              )
             ))}
           </nav>
 
@@ -55,14 +66,25 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-[#857757] transition-colors duration-200 font-medium px-2 py-1"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+                item.type === 'route' ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="text-gray-700 hover:text-[#857757] transition-colors duration-200 font-medium px-2 py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-700 hover:text-[#857757] transition-colors duration-200 font-medium px-2 py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </nav>
           </div>

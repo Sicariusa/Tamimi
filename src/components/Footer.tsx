@@ -29,33 +29,33 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <img 
-              src="/TamimiGroup.png" 
-              alt="Tamimi Group" 
-              className="h-16 w-auto mb-6 brightness-0 invert"
+            <img
+              src="/TamimiGroup.png"
+              alt="Tamimi Group"
+              className="h-16 w-auto mb-6"
             />
             <p className="text-gray-300 leading-relaxed mb-6">
-              Since the early 1940s, Tamimi Group has been a cornerstone of Saudi Arabia's 
-              economic development, operating across multiple sectors with a commitment 
+              Since the early 1940s, Tamimi Group has been a cornerstone of Saudi Arabia's
+              economic development, operating across multiple sectors with a commitment
               to excellence, innovation, and community service.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://www.facebook.com/tafgajeddah/" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/tafgajeddah/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white/10 rounded-lg hover:bg-[#e9ce8c] hover:text-[#12110e] transition-all duration-300"
               >
                 <Facebook size={20} />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="p-3 bg-white/10 rounded-lg hover:bg-[#e9ce8c] hover:text-[#12110e] transition-all duration-300"
               >
                 <Linkedin size={20} />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="p-3 bg-white/10 rounded-lg hover:bg-[#e9ce8c] hover:text-[#12110e] transition-all duration-300"
               >
                 <Twitter size={20} />
@@ -69,7 +69,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-gray-300 hover:text-[#e9ce8c] transition-colors duration-200"
                   >
@@ -86,7 +86,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={service.href}
                     className="text-gray-300 hover:text-[#e9ce8c] transition-colors duration-200"
                   >
@@ -103,7 +103,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {legal.map((item, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={item.href}
                     className="text-gray-300 hover:text-[#e9ce8c] transition-colors duration-200"
                   >
