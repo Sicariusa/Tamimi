@@ -60,7 +60,7 @@ const News = () => {
             News & Investors
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with our latest developments, achievements, and 
+            Stay updated with our latest developments, achievements, and
             strategic initiatives driving growth across the Kingdom.
           </p>
         </div>
@@ -70,7 +70,7 @@ const News = () => {
             <h3 className="text-2xl font-bold text-[#12110e] mb-8">Latest News</h3>
             <div className="space-y-6">
               {newsItems.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer"
                 >
@@ -84,11 +84,11 @@ const News = () => {
                     </div>
                     <ExternalLink className="text-gray-400 group-hover:text-[#857757] transition-colors" size={16} />
                   </div>
-                  
+
                   <h4 className="text-xl font-semibold text-[#12110e] mb-3 group-hover:text-[#857757] transition-colors">
                     {item.title}
                   </h4>
-                  
+
                   <p className="text-gray-600 leading-relaxed">
                     {item.description}
                   </p>
@@ -104,7 +104,7 @@ const News = () => {
                 <TrendingUp className="text-[#e9ce8c] mr-3" size={24} />
                 <h4 className="text-xl font-semibold">Performance Overview</h4>
               </div>
-              
+
               <div className="space-y-4">
                 {investorHighlights.map((highlight, index) => (
                   <div key={index} className="flex justify-between items-center">
@@ -138,4 +138,4 @@ const News = () => {
   );
 };
 
-export default Partnerships;
+export default News;

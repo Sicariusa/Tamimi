@@ -44,8 +44,8 @@ const Careers = () => {
             Join Our Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Be part of Saudi Arabia's leading conglomerate and contribute to the 
-            Kingdom's Vision 2030. We offer exciting career opportunities across 
+            Be part of Saudi Arabia's leading conglomerate and contribute to the
+            Kingdom's Vision 2030. We offer exciting career opportunities across
             multiple industries with a focus on developing Saudi talent.
           </p>
         </div>
@@ -55,7 +55,7 @@ const Careers = () => {
             <h3 className="text-3xl font-bold text-[#12110e] mb-6">
               Why Choose Tamimi Group?
             </h3>
-            
+
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -79,10 +79,10 @@ const Careers = () => {
             <h3 className="text-2xl font-bold mb-6 text-center">
               Current Opportunities
             </h3>
-            
+
             <div className="space-y-3 mb-8">
               {opportunities.map((opportunity, index) => (
-                <div 
+                <div
                   key={index}
                   className="flex items-center justify-between p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors cursor-pointer"
                 >
@@ -108,9 +108,9 @@ const Careers = () => {
               Committed to Saudization
             </h3>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mb-6">
-              With 80% of our workforce being Saudi nationals, we're proud to contribute 
-              to the Kingdom's human capital development. Our comprehensive training 
-              programs and mentorship initiatives ensure Saudi talent thrives across 
+              With 80% of our workforce being Saudi nationals, we're proud to contribute
+              to the Kingdom's human capital development. Our comprehensive training
+              programs and mentorship initiatives ensure Saudi talent thrives across
               all levels of our organization.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -134,4 +134,4 @@ const Careers = () => {
   );
 };
 
-export default CSR;
+export default Careers;

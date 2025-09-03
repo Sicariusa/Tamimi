@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, Building, Factory, Truck, Home, ChefHat } from 'lucide-react';
+import { ShoppingCart, Building, Factory, Truck, Home, ChefHat, ArrowRight } from 'lucide-react';
 
 const BusinessDivisions = () => {
   const divisions = [
@@ -55,29 +55,29 @@ const BusinessDivisions = () => {
             Business Divisions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our diversified portfolio spans multiple sectors, each contributing to 
+            Our diversified portfolio spans multiple sectors, each contributing to
             Saudi Arabia's economic growth and Vision 2030 objectives.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {divisions.map((division, index) => (
-            <div 
+            <div
               key={index}
               className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
             >
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
                 {division.icon}
               </div>
-              
+
               <h3 className="text-2xl font-bold text-[#12110e] mb-2">
                 {division.title}
               </h3>
-              
+
               <h4 className="text-lg font-semibold text-[#857757] mb-4">
                 {division.subtitle}
               </h4>
-              
+
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {division.description}
               </p>
