@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Business Divisions', href: '#divisions' },
-    { name: 'Tamimi Markets', href: '#markets' },
-    { name: 'Careers', href: '#careers' },
+    { name: 'About Us', href: '/#about' },
+    { name: 'Business Divisions', href: '/#divisions' },
+    { name: 'Tamimi Markets', href: '/#markets' },
+    { name: 'Careers', href: '/careers' },
   ];
 
   const services = [
@@ -68,14 +69,25 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 text-[#e9ce8c]">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-[#e9ce8c] transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+                link.name.includes('/#') ? (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-[#e9ce8c] transition-colors duration-200"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={index}>
+                    <Link
+                      to={link.href}
+                      className="text-gray-300 hover:text-[#e9ce8c] transition-colors duration-200"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                )
               ))}
             </ul>
           </div>

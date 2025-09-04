@@ -100,7 +100,7 @@ const TamimiMarkets = () => {
         </div>
 
         {/* Features */}
-        <div className="bg-[#12110e] rounded-2xl p-8 lg:p-12 text-white">
+        <div className="bg-[#12110e] rounded-2xl p-8 lg:p-12 text-white margin-top: 4rem; margin-bottom: 4rem; mt-16">
           <h3 className="text-3xl font-bold mb-8 text-center">Why Choose Tamimi Markets?</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
