@@ -11,9 +11,9 @@ const Header = () => {
     { name: 'Business Divisions', href: '#divisions', type: 'anchor' },
     { name: 'Tamimi Markets', href: '/#markets', type: 'anchor' },
     { name: 'CSR', href: '/#csr', type: 'anchor' },
-    { name: 'Careers', href: '/careers', type: 'route' },
     { name: 'News & Investors', href: '/#news', type: 'anchor' },
     { name: 'Contact', href: '/#contact', type: 'anchor' },
+    { name: 'Careers', href: '/careers', type: 'route' },
   ];
 
   return (
