@@ -1,40 +1,70 @@
-import React from 'react';
-import { Briefcase, GraduationCap, TrendingUp, Users, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Briefcase, GraduationCap, TrendingUp, Users, ArrowRight, X } from 'lucide-react';
+import benefits from '../data//Careers data/benefits';
+import opportunities, { Job } from '../data/Careers data/Opportunities';
+
+const getUnique = (arr, key) => [...new Set(arr.map(item => item[key]))];
 
 const Careers = () => {
-  const benefits = [
-    {
-      icon: <GraduationCap className="text-[#e9ce8c]" size={32} />,
-      title: "Professional Development",
-      description: "Comprehensive training programs and career advancement opportunities"
-    },
-    {
-      icon: <TrendingUp className="text-[#e9ce8c]" size={32} />,
-      title: "Growth Opportunities",
-      description: "Clear career progression paths across our diverse business portfolio"
-    },
-    {
-      icon: <Users className="text-[#e9ce8c]" size={32} />,
-      title: "Inclusive Culture",
-      description: "Diverse, inclusive workplace that values every team member's contribution"
-    },
-    {
-      icon: <Briefcase className="text-[#e9ce8c]" size={32} />,
-      title: "Competitive Benefits",
-      description: "Comprehensive benefits package including health, housing, and performance incentives"
-    }
-  ];
+  const [search, setSearch] = useState('');
+  const [department, setDepartment] = useState('');
+  const [location, setLocation] = useState('');
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [form, setForm] = useState<{ name: string; email: string; phone: string; cv: File | null }>({ name: '', email: '', phone: '', cv: null });
+  const [dragActive, setDragActive] = useState(false);
 
-  const opportunities = [
-    "Engineering & Technical Services",
-    "Retail Operations & Management",
-    "Project Management",
-    "Finance & Accounting",
-    "Human Resources",
-    "Information Technology",
-    "Supply Chain & Logistics",
-    "Business Development"
-  ];
+  // Filter jobs
+  const filteredJobs = opportunities.filter(job => {
+    return (
+      (!search || job.title.toLowerCase().includes(search.toLowerCase())) &&
+      (!department || job.department === department) &&
+      (!location || job.location === location)
+    );
+  });
+
+  // Modal close
+  const closeModal = () => {
+    setSelectedJob(null);
+    setForm({ name: '', email: '', phone: '', cv: null });
+    setDragActive(false);
+  };
+
+  // Handle form change
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setForm(f => ({ ...f, [name]: value }));
+  };
+
+  // Handle CV upload
+  const handleDrop = e => {
+    e.preventDefault();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      setForm(f => ({ ...f, cv: e.dataTransfer.files[0] }));
+    }
+  };
+
+  // Handle drag events
+  const handleDrag = e => {
+    e.preventDefault();
+    if (e.type === 'dragenter' || e.type === 'dragover') setDragActive(true);
+    if (e.type === 'dragleave') setDragActive(false);
+  };
+
+  // Handle file input
+  const handleFileInput = e => {
+    if (e.target.files && e.target.files[0]) {
+      setForm(f => ({ ...f, cv: e.target.files[0] }));
+    }
+  };
+
+  // Handle submit
+  const handleSubmit = e => {
+    e.preventDefault();
+    // Submission logic here (e.g., send to API)
+    alert('Application submitted!');
+    closeModal();
+  };
 
   return (
     <section id="careers" className="py-20 bg-white">
@@ -55,7 +85,6 @@ const Careers = () => {
             <h3 className="text-3xl font-bold text-[#12110e] mb-6">
               Why Choose Tamimi Group?
             </h3>
-
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -76,30 +105,136 @@ const Careers = () => {
           </div>
 
           <div className="bg-gradient-to-br from-[#12110e] to-[#645c42] rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-6 text-center">
-              Current Opportunities
-            </h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">Current Opportunities</h3>
 
-            <div className="space-y-3 mb-8">
-              {opportunities.map((opportunity, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors cursor-pointer"
-                >
-                  <span className="font-medium">{opportunity}</span>
-                  <ArrowRight size={16} className="text-[#e9ce8c]" />
-                </div>
-              ))}
+            {/* Filters */}
+            <div className="mb-6 flex flex-col gap-3">
+              <input
+                type="text"
+                placeholder="Search job title..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                className="px-3 py-2 rounded border text-black"
+              />
+              <select
+                value={department}
+                onChange={e => setDepartment(e.target.value)}
+                className="px-3 py-2 rounded border text-black"
+              >
+                <option value="">All Departments</option>
+                {getUnique(opportunities, 'department').map(dep => (
+                  <option key={dep} value={dep}>{dep}</option>
+                ))}
+              </select>
+              <select
+                value={location}
+                onChange={e => setLocation(e.target.value)}
+                className="px-3 py-2 rounded border text-black"
+              >
+                <option value="">All Locations</option>
+                {getUnique(opportunities, 'location').map(loc => (
+                  <option key={loc} value={loc}>{loc}</option>
+                ))}
+              </select>
             </div>
 
-            <div className="text-center">
-              <button className="bg-[#e9ce8c] text-[#12110e] px-8 py-4 rounded-lg font-semibold hover:bg-[#ccb57c] transition-all duration-300 inline-flex items-center group">
-                View All Positions
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
+            {/* Job List */}
+            <div className="space-y-3 mb-8">
+              {filteredJobs.length === 0 ? (
+                <div className="text-center text-gray-300">No jobs found.</div>
+              ) : (
+                filteredJobs.map((job, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-between p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors cursor-pointer"
+                    onClick={() => setSelectedJob(job)}
+                  >
+                    <span className="font-medium">{job.title}</span>
+                    <ArrowRight size={16} className="text-[#e9ce8c]" />
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
+
+        {/* Modal for job details and application */}
+        {selectedJob && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+            <div className="bg-gradient-to-br from-[#e9ce8c]/30 to-[#645c42]/20 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative border border-[#e9ce8c]/40">
+              <button
+                className="absolute top-4 right-4 text-[#645c42] hover:text-[#12110e] transition-colors"
+                onClick={closeModal}
+                aria-label="Close"
+              >
+                <X size={28} />
+              </button>
+              <h2 className="text-3xl font-bold mb-2 text-[#12110e] font-serif tracking-tight">{selectedJob.title}</h2>
+              <div className="mb-2 text-lg text-[#645c42] font-medium">{selectedJob.description}</div>
+              <div className="mb-2 text-sm text-[#ccb57c] font-semibold">Department: {selectedJob.department}</div>
+              <div className="mb-2 text-sm text-[#ccb57c] font-semibold">Location: {selectedJob.location}</div>
+              <div className="mb-4 text-sm text-[#e9ce8c]">Skills: {selectedJob.skills.join(', ')}</div>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-[#e9ce8c] bg-white rounded-lg text-[#12110e] font-sans focus:outline-none focus:border-[#645c42] transition"
+                  style={{ fontFamily: 'inherit', fontWeight: 500 }}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-[#e9ce8c] bg-white rounded-lg text-[#12110e] font-sans focus:outline-none focus:border-[#645c42] transition"
+                  style={{ fontFamily: 'inherit', fontWeight: 500 }}
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-[#e9ce8c] bg-white rounded-lg text-[#12110e] font-sans focus:outline-none focus:border-[#645c42] transition"
+                  style={{ fontFamily: 'inherit', fontWeight: 500 }}
+                />
+                {/* Drag and drop CV */}
+                <div
+                  className={`w-full border-2 border-dashed rounded-xl p-5 text-center transition ${dragActive ? 'border-[#645c42] bg-[#e9ce8c]/10' : 'border-[#e9ce8c] bg-white'}`}
+                  onDragEnter={handleDrag}
+                  onDragOver={handleDrag}
+                  onDragLeave={handleDrag}
+                  onDrop={handleDrop}
+                >
+                  <input
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    style={{ display: 'none' }}
+                    id="cv-upload"
+                    onChange={handleFileInput}
+                  />
+                  <label htmlFor="cv-upload" className="cursor-pointer text-[#645c42] font-semibold">
+                    {form.cv ? `CV: ${form.cv.name}` : 'Drag & drop your CV here or click to upload'}
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-[#e9ce8c] text-[#12110e] px-6 py-3 rounded-xl font-bold font-sans text-lg hover:bg-[#ccb57c] transition-all duration-200 shadow-sm"
+                  style={{ fontFamily: 'inherit' }}
+                >
+                  Submit Application
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
 
         {/* Saudization Focus */}
         <div className="bg-gradient-to-r from-[#e9ce8c]/10 to-[#ccb57c]/10 p-8 rounded-xl border border-[#e9ce8c]/20">
