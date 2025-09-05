@@ -1,5 +1,6 @@
 import React from 'react';
-import { Award, Target, Heart, Shield } from 'lucide-react';
+import { Award, Target, Heart, Shield, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const principles = [
@@ -16,7 +17,7 @@ const About = () => {
     {
       icon: <Heart className="text-[#e9ce8c]" size={32} />,
       title: "Community",
-      description: "Dedicated to serving our communities and contributing to Saudi Arabia's sustainable development."
+      description: "Supporting national development and community wellbeing through sustainable growth."
     },
     {
       icon: <Shield className="text-[#e9ce8c]" size={32} />,
@@ -33,37 +34,46 @@ const About = () => {
             About Tamimi Group
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Founded in the early 1940s by Sheikh Ali bin Abdullah Al-Tamimi, 
-            Tamimi Group has grown from humble beginnings to become one of Saudi Arabia's 
+            Founded in the early 1940s by Sheikh Ali bin Abdullah Al-Tamimi,
+            Tamimi Group has grown from humble beginnings to become one of Saudi Arabia's
             most respected and diversified business conglomerates.
           </p>
+        </div>
+
+        {/* Group quick facts */}
+        <div className="grid sm:grid-cols-3 gap-6 mb-16">
+          {[
+            { n: "80+ Years", l: "Heritage & operations" },
+            { n: "30+ Companies", l: "Diversified portfolio" },
+            { n: "21,000+ People", l: "Across the Group" }
+          ].map((it, i) => (
+            <div key={i} className="bg-gray-50 p-6 rounded-xl text-center">
+              <div className="text-2xl font-bold text-[#12110e]">{it.n}</div>
+              <div className="text-sm text-gray-600">{it.l}</div>
+            </div>
+          ))}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <h3 className="text-3xl font-bold text-[#12110e] mb-6">Our Heritage</h3>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              For over eight decades, Tamimi Group has been at the forefront of Saudi Arabia's 
-              economic development. What started as a small trading business has evolved into 
-              a diversified conglomerate spanning retail, contracting, industrial services, 
+              For over eight decades, Tamimi Group has been at the forefront of Saudi Arabia's
+              economic development. What started as a small trading business has evolved into
+              a diversified conglomerate spanning retail, contracting, industrial services,
               logistics, and real estate.
             </p>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Today, we operate more than 30 companies and 10+ joint ventures, employing 
-              over 21,000 people across the Kingdom and beyond. Our commitment to excellence, 
-              innovation, and community development continues to drive our success.
+              Today, we operate more than 30 companies and 10+ joint ventures, employing
+              thousands of professionals who share our commitment to quality, safety, and
+              customer success.
             </p>
-            <div className="bg-[#e9ce8c]/10 p-6 rounded-lg border-l-4 border-[#e9ce8c]">
-              <p className="text-[#12110e] font-semibold italic">
-                "Building sustainable partnerships that create lasting value for our 
-                communities, stakeholders, and the Kingdom of Saudi Arabia."
-              </p>
-            </div>
           </div>
 
+          {/* Values */}
           <div className="grid grid-cols-2 gap-6">
             {principles.map((principle, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
@@ -79,6 +89,29 @@ const About = () => {
           </div>
         </div>
 
+        {/* TAFGA quick facts */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-[#12110e] mb-6">Tamimi Global (TAFGA) Snapshot</h3>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Tamimi Global Company Ltd. (TAFGA) is a Tamimi Group company delivering
+            integrated operations & maintenance, facility management and accommodation,
+            catering, and construction services across KSA, Qatar, and Kuwait.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { n: "17,000+", l: "Employees" },
+              { n: "29", l: "Nationalities" },
+              { n: "200+", l: "Work sites" },
+              { n: "3", l: "Countries of operation" }
+            ].map((it, i) => (
+              <div key={i} className="bg-gray-50 p-6 rounded-xl text-center">
+                <div className="text-2xl font-bold text-[#12110e]">{it.n}</div>
+                <div className="text-sm text-gray-600">{it.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Timeline */}
         <div className="bg-gradient-to-r from-[#12110e] to-[#645c42] rounded-2xl p-8 lg:p-12 text-white">
           <h3 className="text-3xl font-bold mb-8 text-center">Our Journey</h3>
@@ -88,8 +121,8 @@ const About = () => {
               <div className="text-sm">Founded by Sheikh Ali bin Abdullah Al-Tamimi</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#e9ce8c] mb-2">1980s</div>
-              <div className="text-sm">Expansion into retail and contracting</div>
+              <div className="text-4xl font-bold text-[#e9ce8c] mb-2">1970s</div>
+              <div className="text-sm">Expansion into services and O&amp;M</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-[#e9ce8c] mb-2">2000s</div>
@@ -99,6 +132,17 @@ const About = () => {
               <div className="text-4xl font-bold text-[#e9ce8c] mb-2">Today</div>
               <div className="text-sm">30+ companies, Vision 2030 partner</div>
             </div>
+          </div>
+
+          {/* CTA button like your screenshot */}
+          <div className="mt-10 text-center">
+            <Link
+              to="/about/tamimi"
+              className="inline-flex items-center bg-[#12110e] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#645c42] transition-all shadow-sm"
+            >
+              Learn More About Tamimi
+              <ArrowRight size={18} className="ml-2" />
+            </Link>
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/', type: 'route' },
-    { name: 'About', href: '#about', type: 'anchor' },
-    { name: 'Business Divisions', href: '#divisions', type: 'anchor' },
+    { name: 'About', href: '/#about', type: 'anchor' },
+    { name: 'Business Divisions', href: '/#divisions', type: 'anchor' },
     { name: 'Tamimi Markets', href: '/#markets', type: 'anchor' },
     { name: 'CSR', href: '/#csr', type: 'anchor' },
     { name: 'News & Investors', href: '/#news', type: 'anchor' },
