@@ -9,6 +9,7 @@ const JobsSearch = () => {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [form, setForm] = useState<{ name: string; email: string; phone: string; cv: File | null }>({ name: '', email: '', phone: '', cv: null });
   const [dragActive, setDragActive] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   // Filter jobs
   const filteredJobs = opportunities.filter(job => {
@@ -59,8 +60,11 @@ const JobsSearch = () => {
   const handleSubmit = e => {
     e.preventDefault();
     // Submission logic here (e.g., send to API)
-    alert('Application submitted!');
-    closeModal();
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+      closeModal();
+    }, 10000);
   };
 
   return (
@@ -267,6 +271,23 @@ const JobsSearch = () => {
                 </form>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Custom Alert */}
+      {showAlert && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center animate-pulse">
+            <div className="text-6xl mb-4">✅</div>
+            <h3 className="text-2xl font-bold text-[#12110e] mb-3">Success!</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              Your application has been submitted successfully.
+            </p>
+            <div className="w-full bg-[#e9ce8c]/20 rounded-full h-2">
+              <div className="bg-[#e9ce8c] h-2 rounded-full animate-pulse" style={{width: '100%'}}></div>
+            </div>
+            <p className="text-sm text-gray-500 mt-2">Closing automatically...</p>
           </div>
         </div>
       )}
