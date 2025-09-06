@@ -3,40 +3,20 @@ import React from 'react';
 const Saudization = () => {
   return (
     <div className="relative rounded-xl overflow-hidden border border-[#e9ce8c]/20">
-      {/* Animated Saudi Flag Background */}
-      <div className="absolute inset-0 z-0">
-        <style>{`
-          @keyframes wave {
-            0%, 100% { transform: translateX(0px) scaleX(1); }
-            25% { transform: translateX(-5px) scaleX(1.02); }
-            50% { transform: translateX(0px) scaleX(1); }
-            75% { transform: translateX(5px) scaleX(0.98); }
-          }
-          @keyframes wave2 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-2px) rotate(0.5deg); }
-            66% { transform: translateY(2px) rotate(-0.5deg); }
-          }
-          .saudi-flag-wave {
-            animation: wave 3s ease-in-out infinite, wave2 4s ease-in-out infinite;
-          }
-        `}</style>
-        
-        {/* Saudi Flag Green Background with Wave Effect */}
-        <div className="saudi-flag-wave absolute inset-0 bg-gradient-to-r from-green-700 via-green-600 to-green-700">
-          {/* Flag wave pattern overlay */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-white/10 to-transparent transform skew-x-12 animate-pulse"></div>
-            <div className="absolute top-0 left-1/4 w-full h-full bg-gradient-to-b from-transparent via-white/5 to-transparent transform -skew-x-6 animate-pulse" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-0 left-1/2 w-full h-full bg-gradient-to-b from-transparent via-white/8 to-transparent transform skew-x-3 animate-pulse" style={{animationDelay: '2s'}}></div>
-          </div>
-          
-          {/* Saudi Emblem Area */}
-          <div className="absolute left-8 top-1/2 transform -translate-y-1/2 text-white/20 text-6xl">
-            ⚔️
-          </div>
-        </div>
-      </div>
+      {/* Video background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        style={{ objectPosition: 'center 60%' }}
+        onError={(e) => console.error('Video failed to load:', e)}
+        onLoadStart={() => console.log('Video loading started')}
+        onCanPlay={() => console.log('Video can play')}
+      >
+        <source src="/vecteezy_kingdom-of-saudi-arabia-ksa-realistic-waving-flag-smooth_10248663.mp4" type="video/mp4" />
+      </video>
       
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-[#0a3a1a]/80 z-10"></div>
