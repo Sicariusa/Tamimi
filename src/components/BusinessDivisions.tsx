@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   ChefHat, 
   Building, 
@@ -67,7 +67,7 @@ const BusinessDivisions = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#4a4234] via-[#3a3529] to-[#2d2a20] relative overflow-hidden">
+    <section id="BusinessDivisions" className="py-24 bg-gradient-to-b from-[#4a4234] via-[#3a3529] to-[#2d2a20] relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div 
@@ -110,7 +110,9 @@ const BusinessDivisions = () => {
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 h-full transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-[#e9ce8c]/20 border border-[#e9ce8c]/10 hover:border-[#e9ce8c]/30">
+              <div className={`relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 h-full transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-[#e9ce8c]/20 border border-[#e9ce8c]/10 hover:border-[#e9ce8c]/30 ${
+                hoveredCard !== null && hoveredCard !== index ? 'opacity-75 scale-95' : ''
+              }`}>
                 {/* Golden accent bar */}
                 <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[#e9ce8c] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 
