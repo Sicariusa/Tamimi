@@ -49,7 +49,7 @@ export default async function DivisionPage({ params }: Props) {
         title={division.name}
         subtitle={division.shortName}
         description={division.description}
-        backgroundVideo={division.hero}
+        backgroundImage={division.hero}
         height="lg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

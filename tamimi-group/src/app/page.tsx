@@ -16,7 +16,7 @@ export default function Home() {
         title="Shaping the Future of Gulf Services"
         subtitle="Excellence Since 1945"
         description="A leading multinational conglomerate providing premium services across catering, facility management, board & lodging, and retail operations throughout the Gulf region."
-        backgroundVideo="/media/hero-video.mp4"
+        backgroundImage="/media/hero-video.jpg"
         height="full"
         showScrollIndicator
       >

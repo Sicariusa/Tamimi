@@ -33,6 +33,33 @@ interface MapboxMapProps {
   interactive?: boolean;
 }
 
+// Fallback component when no Mapbox token is provided
+function MapFallback({ height, className, markers }: { height: string; className: string; markers: any[] }) {
+  return (
+    <div className={`relative overflow-hidden rounded-2xl ${className}`}>
+      <div
+        style={{ height }}
+        className="w-full bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center text-gray-600 border-2 border-dashed border-gray-300"
+      >
+        <div className="text-center p-8">
+          <div className="w-16 h-16 mx-auto mb-4 bg-gray-300 rounded-full flex items-center justify-center">
+            <svg className="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <h3 className="font-semibold text-gray-700 mb-2">Interactive Map</h3>
+          <p className="text-sm text-gray-500 mb-4">Map unavailable (Mapbox token required)</p>
+          {markers.length > 0 && (
+            <div className="text-xs text-gray-400">
+              {markers.length} location{markers.length !== 1 ? 's' : ''} available
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function MapboxMap({
   center = DEFAULT_CENTER,
   zoom = DEFAULT_ZOOM,
@@ -49,6 +76,11 @@ export default function MapboxMap({
   const map = useRef<mapboxgl.Map | null>(null);
   const markersRef = useRef<mapboxgl.Marker[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  // Safe fallback when no Mapbox token is provided
+  if (!MAPBOX_CONFIG.accessToken) {
+    return <MapFallback height={height} className={className} markers={markers} />;
+  }
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -224,16 +256,6 @@ export default function MapboxMap({
         </div>
       )}
 
-      {!MAPBOX_CONFIG.accessToken && (
-        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-          <div className="text-center p-8">
-            <div className="text-gray-600 mb-2">Map requires Mapbox token</div>
-            <div className="text-sm text-gray-500">
-              Set NEXT_PUBLIC_MAPBOX_TOKEN environment variable
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

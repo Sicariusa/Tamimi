@@ -67,7 +67,14 @@ export default function PageHero({
   return (
     <section className={`relative ${heightClasses[height]} overflow-hidden ${className}`}>
       {/* Background Media */}
-      {backgroundVideo && (
+      {backgroundImage && (
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transform scale-105"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+      )}
+
+      {backgroundVideo && !backgroundImage && (
         <video
           autoPlay
           muted
@@ -77,13 +84,6 @@ export default function PageHero({
         >
           <source src={backgroundVideo} type="video/mp4" />
         </video>
-      )}
-
-      {backgroundImage && !backgroundVideo && (
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transform scale-105"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        />
       )}
 
       {/* Overlay */}

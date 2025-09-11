@@ -10,10 +10,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   
-  // Enable experimental features
-  experimental: {
-    optimizeCss: true,
-  },
+  // Enable experimental features (disabled for stability)
+  // experimental: {
+  //   optimizeCss: true,
+  // },
   
   // Headers for security and performance
   async headers() {
