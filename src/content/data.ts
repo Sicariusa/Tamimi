@@ -2,7 +2,7 @@
 export interface MediaAsset {
   id: string;
   url: string;
-  type: 'video' | 'image';
+  type: 'image' | 'image';
   alt?: string;
   poster?: string;
   attribution: {
@@ -133,30 +133,30 @@ export const siteData = {
   media: {
     homeHero: {
       id: 'home-hero',
-      url: '/media/videos/corporate-headquarters.mp4',
-      type: 'video' as const,
+      url: '/media/corp.mp4',
+      type: 'image' as const,
       poster: '/media/images/corporate-headquarters-poster.jpg',
       attribution: {
         source: 'pexels' as const,
         photographer: 'Sora Shimazaki',
-        url: 'https://www.pexels.com/video/modern-corporate-building-exterior-8439334/'
+        url: '/media/corp.mp4'
       }
     },
     aboutHero: {
       id: 'about-hero',
-      url: '/media/videos/business-handshake.mp4',
-      type: 'video' as const,
+      url: '/media/about.mp4',
+      type: 'image' as const,
       poster: '/media/images/business-handshake-poster.jpg',
       attribution: {
         source: 'pexels' as const,
         photographer: 'Mikhail Nilov',
-        url: 'https://www.pexels.com/video/business-handshake-meeting-8439445/'
+        url: '/media/about.mp4'
       }
     },
     marketsHero: {
       id: 'markets-hero',
-      url: '/media/videos/supermarket-interior.mp4',
-      type: 'video' as const,
+      url: 'https://images.pexels.com/photos/5632392/pexels-photo-5632392.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      type: 'image' as const,
       poster: '/media/images/supermarket-interior-poster.jpg',
       attribution: {
         source: 'pexels' as const,
@@ -166,8 +166,8 @@ export const siteData = {
     },
     csrHero: {
       id: 'csr-hero',
-      url: '/media/videos/sustainability.mp4',
-      type: 'video' as const,
+      url: 'https://images.pexels.com/photos/3826676/pexels-photo-3826676.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      type: 'image' as const,
       poster: '/media/images/sustainability-poster.jpg',
       attribution: {
         source: 'pexels' as const,
@@ -177,8 +177,8 @@ export const siteData = {
     },
     careersHero: {
       id: 'careers-hero',
-      url: '/media/videos/diverse-team.mp4',
-      type: 'video' as const,
+      url: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      type: 'image' as const,
       poster: '/media/images/diverse-team-poster.jpg',
       attribution: {
         source: 'pexels' as const,
@@ -308,7 +308,7 @@ export const siteData = {
       slug: 'catering-services',
       description: 'Premium catering solutions serving government, corporate, and institutional clients across the Kingdom with exceptional quality and service standards.',
       shortDescription: 'Premium catering solutions for corporate and institutional clients',
-      heroMedia: '/media/videos/catering-service.mp4',
+      heroMedia: 'https://images.pexels.com/photos/4252139/pexels-photo-4252139.jpeg?auto=compress&cs=tinysrgb&w=1920',
       icon: 'UtensilsCrossed',
       color: '#C9A227',
       established: '1965',
@@ -334,7 +334,7 @@ export const siteData = {
       slug: 'facility-management',
       description: 'Comprehensive facility management services providing integrated solutions for maintenance, operations, and support services across diverse sectors.',
       shortDescription: 'Integrated facility management and maintenance solutions',
-      heroMedia: '/media/videos/facility-management.mp4',
+      heroMedia: 'https://images.unsplash.com/photo-1503389152951-9f343605f61c?auto=format&fit=crop&w=1920&q=80',
       icon: 'Settings',
       color: '#2563EB',
       established: '1978',
@@ -360,7 +360,7 @@ export const siteData = {
       slug: 'board-lodging',
       description: 'Premium accommodation services providing comfortable and secure lodging solutions for corporate clients, government entities, and institutions.',
       shortDescription: 'Quality accommodation and hospitality services',
-      heroMedia: '/media/videos/accommodation.mp4',
+      heroMedia: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1920&q=80',
       icon: 'Building',
       color: '#059669',
       established: '1972',
@@ -386,7 +386,7 @@ export const siteData = {
       slug: 'contracting-construction',
       description: 'Full-service contracting solutions delivering high-quality construction projects from concept to completion with expertise in commercial and industrial sectors.',
       shortDescription: 'Professional contracting and construction services',
-      heroMedia: '/media/videos/construction.mp4',
+      heroMedia: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80',
       icon: 'HardHat',
       color: '#DC2626',
       established: '1968',
