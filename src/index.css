@@ -1,87 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Custom Properties for Dynamic Values */
+:root {
+  --color-gold: #C9A227;
+  --color-gold-hover: #B8911F;
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-base: 300ms;
+}
+
+/* Reset and Base Styles */
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  font-variation-settings: 'opsz' 32;
+  line-height: 1.5;
+  color: #F5F1E8;
+  background-color: #0D0D0D;
+  overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Typography Enhancement */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.625;
+}
+
+/* Numbers and tabular data */
+.tabular-nums {
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
+/* Luxury Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e9ce8c;
-  border-radius: 4px;
+  background: rgba(201, 162, 39, 0.3);
+  border-radius: 3px;
+  transition: background var(--duration-base) var(--ease-luxury);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ccb57c;
+  background: rgba(201, 162, 39, 0.5);
 }
 
-/* Smooth transitions for all interactive elements */
-button, a, input, textarea, select {
-  transition: all 0.2s ease-in-out;
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
-/* Focus styles */
+/* Enhanced Interactive Elements */
+button, a, input, textarea, select, [role="button"] {
+  transition: all var(--duration-base) var(--ease-luxury);
+}
+
+/* Luxury Focus Styles */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid #e9ce8c;
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-gold);
   outline-offset: 2px;
+  border-radius: 0.25rem;
 }
 
-* {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #e9ce8c;
+/* Skip to Content Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-gold);
+  color: #0D0D0D;
+  padding: 8px;
   border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 1600;
+  transition: top var(--duration-base) var(--ease-luxury);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #ccb57c;
+.skip-link:focus {
+  top: 6px;
 }
 
-/* Smooth transitions for all interactive elements */
-button, a, input, textarea, select {
-  transition: all 0.2s ease-in-out;
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-/* Focus styles */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid #e9ce8c;
-  outline-offset: 2px;
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-gold: #FFD700;
+  }
+  
+  body {
+    color: #FFFFFF;
+    background-color: #000000;
+  }
+}
+
+/* Selection Styles */
+::selection {
+  background-color: rgba(201, 162, 39, 0.3);
+  color: #F5F1E8;
+}
+
+::-moz-selection {
+  background-color: rgba(201, 162, 39, 0.3);
+  color: #F5F1E8;
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+  /* Reveal Animation Class */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease-luxury), transform 0.6s var(--ease-luxury);
+  }
+  
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Glass Effect */
+  .glass {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Luxury Card */
+  .luxury-card {
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all var(--duration-base) var(--ease-luxury);
+  }
+  
+  .luxury-card:hover {
+    transform: translateY(-6px) rotateX(2deg) rotateY(1deg);
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.4), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Text Gradients */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C9A227 0%, #E6C547 50%, #C9A227 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Container Utilities */
+  .container-luxury {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .container-luxury {
+      max-width: 1320px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+/* Loading States */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.1), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Print Styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
 }
