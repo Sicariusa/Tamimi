@@ -22,7 +22,7 @@ const CSRPage: React.FC = () => {
       description: 'Providing educational opportunities and scholarships to empower the next generation of Saudi leaders.',
       icon: GraduationCap,
       color: '#2563EB',
-      image: '/media/images/csr-education.jpg',
+      image: '/images/csr/education.jpg',
       stats: [
         { label: 'Scholarships', value: '500+' },
         { label: 'Universities', value: '15' }
@@ -34,7 +34,7 @@ const CSRPage: React.FC = () => {
       description: 'Supporting community health initiatives and medical facilities across the Kingdom.',
       icon: Heart,
       color: '#DC2626',
-      image: '/media/images/csr-healthcare.jpg',
+      image: '/images/csr/healthcare.jpg',
       stats: [
         { label: 'Clinics Supported', value: '25' },
         { label: 'Beneficiaries', value: '10K+' }
@@ -46,7 +46,7 @@ const CSRPage: React.FC = () => {
       description: 'Leading environmental conservation efforts and sustainable business practices.',
       icon: Leaf,
       color: '#059669',
-      image: '/media/images/csr-environment.jpg',
+      image: '/images/csr/environment.jpg',
       stats: [
         { label: 'CO₂ Reduced', value: '30%' },
         { label: 'Green Projects', value: '20+' }
@@ -58,7 +58,7 @@ const CSRPage: React.FC = () => {
       description: 'Investing in local communities through job creation and social programs.',
       icon: Users,
       color: '#7C3AED',
-      image: '/media/images/csr-community.jpg',
+      image: '/images/csr/community.jpg',
       stats: [
         { label: 'Jobs Created', value: '15K+' },
         { label: 'Programs', value: '50+' }
@@ -70,7 +70,7 @@ const CSRPage: React.FC = () => {
       description: 'Actively contributing to Saudi Arabia\'s transformation and diversification goals.',
       icon: Target,
       color: '#C9A227',
-      image: '/media/images/csr-vision2030.jpg',
+      image: '/images/csr/vision2030.jpg',
       stats: [
         { label: 'Initiatives', value: '25+' },
         { label: 'Investment', value: '$50M+' }
@@ -217,13 +217,24 @@ const CSRPage: React.FC = () => {
 
                 {/* Image */}
                 <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <div className="aspect-video rounded-2xl overflow-hidden bg-surface-tertiary border border-line">
-                    <div className="w-full h-full bg-gradient-to-br from-gold/10 to-surface-tertiary flex items-center justify-center">
-                      <div className="text-center text-gold/60">
-                        <IconComponent size={64} className="mx-auto mb-4" />
-                        <div className="text-sm">{initiative.title}</div>
+                  <div className="aspect-video rounded-2xl overflow-hidden border border-line relative">
+                    {initiative.image ? (
+                      <>
+                        <img
+                          src={initiative.image}
+                          alt={initiative.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                        {/* soft overlay for readability (optional) */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent" />
+                      </>
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-gold/10 to-surface-tertiary flex items-center justify-center">
+                        <IconComponent size={64} className="mx-auto mb-4 text-gold/60" />
+                        <div className="text-sm text-gold/60">{initiative.title}</div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
