@@ -14,7 +14,7 @@ const NewsPage = React.lazy(() => import('./pages/news/NewsPage'));
 const CareersPage = React.lazy(() => import('./pages/CareersPage'));
 const ContactPage = React.lazy(() => import('./pages/contact/ContactPage'));
 
-// Error Boundary Component
+// Error Boundary Componen
 class ErrorBoundary extends React.Component<
   { children: React.ReactNode },
   { hasError: boolean }
