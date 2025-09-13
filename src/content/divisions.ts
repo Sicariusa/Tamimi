@@ -61,7 +61,7 @@ export const divisions: Division[] = [
         ]
       }
     ],
-    heroImage: '/media/images/catering-service.jpg',
+    heroImage: '/images/divisions/catering-hero.jpg',
     icon: 'UtensilsCrossed',
     color: '#C9A227',
     established: '1965'
@@ -94,7 +94,7 @@ export const divisions: Division[] = [
       'Educational Institutions',
       'Residential Complexes'
     ],
-    heroImage: '/media/images/facility-management.jpg',
+    heroImage: '/images/divisions/facility-management.jpg',
     icon: 'Settings',
     color: '#2563EB',
     established: '1978'
@@ -127,7 +127,7 @@ export const divisions: Division[] = [
       'International Corporations',
       'Educational Institutions'
     ],
-    heroImage: '/media/images/board-lodging.jpg',
+    heroImage: '/images/divisions/board-lodging.jpg',
     icon: 'Building2',
     color: '#059669',
     established: '1972'
@@ -160,7 +160,7 @@ export const divisions: Division[] = [
       'Private Sector Clients',
       'Government Entities'
     ],
-    heroImage: '/media/images/construction-site.jpg',
+    heroImage: '/images/divisions/construction-site.jpg',
     icon: 'HardHat',
     color: '#DC2626',
     established: '1968'
@@ -193,7 +193,7 @@ export const divisions: Division[] = [
       'Petrochemical Companies',
       'Manufacturing Facilities'
     ],
-    heroImage: '/media/images/industrial-facility.jpg',
+    heroImage: '/images/divisions/industrial-facility.jpg',
     icon: 'Cog',
     color: '#7C3AED',
     established: '1975'
@@ -226,7 +226,7 @@ export const divisions: Division[] = [
       'Educational Institutions',
       'Corporate Clients'
     ],
-    heroImage: '/media/images/transportation-fleet.jpg',
+    heroImage: '/images/divisions/transportation-fleet.jpg',
     icon: 'Truck',
     color: '#EA580C',
     established: '1980'
