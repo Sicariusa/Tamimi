@@ -9,7 +9,7 @@ const Layout: React.FC = () => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-ink text-ivory">
+    <div className="min-h-screen bg-surface-primary text-text-primary">
       {/* Skip to content link for accessibility */}
       <a 
         href="#main-content" 
