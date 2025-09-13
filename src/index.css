@@ -32,8 +32,8 @@ body {
   font-feature-settings: 'cv11', 'ss01';
   font-variation-settings: 'opsz' 32;
   line-height: 1.5;
-  color: #F5F1E8;
-  background-color: #0D0D0D;
+  color: #1F2937;              /* was #F5F1E8 */
+  background-color: #FFFFFF;   /* was #0D0D0D */
   overflow-x: hidden;
 }
 
@@ -145,15 +145,10 @@ select:focus-visible,
   }
 }
 
-/* Selection Styles */
-::selection {
-  background-color: rgba(201, 162, 39, 0.3);
-  color: #F5F1E8;
-}
-
-::-moz-selection {
-  background-color: rgba(201, 162, 39, 0.3);
-  color: #F5F1E8;
+/* Selection (better on light) */
+::selection, ::-moz-selection {
+  background-color: rgba(201, 162, 39, 0.25);
+  color: #0F172A;                                        /* dark text */
 }
 
 /* Custom Utility Classes */
@@ -170,26 +165,26 @@ select:focus-visible,
     transform: translateY(0);
   }
   
-  /* Glass Effect */
-  .glass {
-    background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  
-  /* Luxury Card */
-  .luxury-card {
-    background: #141414;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transition: all var(--duration-base) var(--ease-luxury);
-  }
-  
-  .luxury-card:hover {
-    transform: translateY(-6px) rotateX(2deg) rotateY(1deg);
-    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.4), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
-  }
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);                  /* was rgba(20,20,20,0.8) */
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);                 /* was rgba(255,255,255,0.08) */
+}
+
+/* Luxury Card */
+.luxury-card {
+  background: #FFFFFF;                                   /* was #141414 */
+  border: 1px solid rgba(0, 0, 0, 0.08);                 /* was rgba(255,255,255,0.08) */
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.luxury-card:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(1deg);
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35),     /* toned for light */
+              0 8px 16px -4px rgba(0, 0, 0, 0.08);
+}
   
   /* Text Gradients */
   .text-gradient-gold {

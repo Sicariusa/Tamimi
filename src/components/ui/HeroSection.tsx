@@ -47,6 +47,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const y = useTransform(scrollY, [0, 500], [0, parallax ? 150 : 0]);
   const scale = useTransform(scrollY, [0, 500], [1.1, 1]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0.7]);
+  
+  // Treat any non-light overlay as "on-image" (use inverse/white text)
+  const onImage = overlay !== 'light';
 
   useEffect(() => {
     if (videoRef.current && mediaType === 'video') {
@@ -94,7 +97,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     const baseClasses = "px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 group";
     const variantClasses = {
       primary: "bg-gold hover:bg-gold-hover text-ink shadow-glow hover:shadow-glow-lg hover:scale-105",
-      secondary: "border-2 border-white text-white hover:bg-white hover:text-ink backdrop-blur-sm"
+      secondary: onImage
+        ? "border-2 border-white text-white hover:bg-white hover:text-ink backdrop-blur-sm"
+        : "border-2 border-line text-text-primary hover:bg-jet/5"
     };
 
     const content = (
@@ -188,7 +193,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         className="relative z-10 container-luxury"
         style={{ opacity }}
       >
-        <div className={`max-w-5xl flex flex-col ${textAlignClasses[textPosition]}`}>
+        <div className={`max-w-5xl flex flex-col ${textAlignClasses[textPosition]} ${onImage ? 'text-text-inverse' : 'text-text-primary'}`}>
           {/* Subtitle */}
           {subtitle && (
             <motion.div
@@ -203,7 +208,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Main Title */}
           <motion.h1
-            className="font-heading font-black text-5xl lg:text-7xl xl:text-8xl leading-none text-ivory mb-6"
+            className={`font-heading font-black text-5xl lg:text-7xl xl:text-8xl leading-none mb-6 ${onImage ? 'text-text-inverse' : 'text-ivory'}`}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -224,7 +229,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Description */}
           <motion.p
-            className="text-xl lg:text-2xl text-ivory/90 leading-relaxed mb-12 max-w-3xl"
+            className={`text-xl lg:text-2xl leading-relaxed mb-12 max-w-3xl ${onImage ? 'text-text-inverse/80' : 'text-steel'}`}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}

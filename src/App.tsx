@@ -35,7 +35,7 @@ class ErrorBoundary extends React.Component<
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-ink text-ivory flex items-center justify-center">
+        <div className="min-h-screen bg-surface-primary text-text-primary flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gold mb-4">Something went wrong</h1>
             <p className="text-steel mb-8">We apologize for the inconvenience. Please refresh the page to try again.</p>
@@ -136,7 +136,7 @@ function App() {
           <Route 
             path="*" 
             element={
-              <div className="min-h-screen bg-ink text-ivory flex items-center justify-center">
+              <div className="min-h-screen bg-surface-primary text-text-primary flex items-center justify-center">
                 <div className="text-center">
                   <h1 className="text-6xl font-bold text-gold mb-4">404</h1>
                   <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>

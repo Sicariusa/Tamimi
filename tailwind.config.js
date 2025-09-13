@@ -4,34 +4,34 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Luxury color palette
-        ink: '#0D0D0D',
-        jet: '#141414',
-        gold: '#C9A227',
-        'gold-hover': '#B8911F',
-        'gold-active': '#A6801C',
-        ivory: '#F5F1E8',
-        mist: '#F7F7F8',
-        steel: '#5E646E',
-        line: 'rgba(255,255,255,0.08)',
-        
-        // Surface variations
-        surface: {
-          primary: '#0D0D0D',
-          secondary: '#141414',
-          tertiary: '#1A1A1A',
-          elevated: '#202020',
-          glass: 'rgba(20, 20, 20, 0.8)',
-        },
-        
-        // Text colors
-        text: {
-          primary: '#F5F1E8',
-          secondary: '#B8B8B8',
-          tertiary: '#5E646E',
-          inverse: '#0D0D0D',
-        }
-      },
+    // Light palette
+    ink: '#FFFFFF',       // primary background
+    jet: '#F7F7F8',       // surfaces, cards
+    gold: '#C9A227',
+    'gold-hover': '#B8911F',
+    'gold-active': '#A6801C',
+    ivory: '#0F172A',     // headings / strong text
+    mist: '#111827',      // deep text
+    steel: '#5E646E',
+    line: 'rgba(0,0,0,0.08)',
+
+    // Surface variations
+    surface: {
+      primary: '#FFFFFF',
+      secondary: '#F7F7F8',
+      tertiary: '#F3F4F6',
+      elevated: '#FFFFFF',
+      glass: 'rgba(255,255,255,0.8)',
+    },
+
+    // Text colors
+    text: {
+      primary: '#1F2937',   // slate-800
+      secondary: '#4B5563', // slate-600
+      tertiary: '#6B7280',  // slate-500
+      inverse: '#FFFFFF',
+    }
+    },
       
       fontFamily: {
         'heading': ['"IBM Plex Sans"', '"Inter"', 'system-ui', 'sans-serif'],
